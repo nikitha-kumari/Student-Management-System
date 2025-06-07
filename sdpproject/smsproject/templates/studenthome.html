@@ -1,0 +1,44 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/adminstyle.css' %}"/>
+     <link type="text/css" rel="stylesheet" href="{% static 'css/studentstyle.css' %}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h2 align="center"> Student Academic Management System Project</h2>
+<br>
+<div style="background-color:lightgrey;padding:20px;font-size:15pt">
+<a href="{% url 'studenthome' %}">Home</a>  &nbsp;&nbsp;&nbsp;
+<a href="{% url 'studentchangepwd' %}">Change Password</a>  &nbsp;&nbsp;&nbsp;
+<a href="{% url 'studentcourses' %}">View Courses</a>  &nbsp;&nbsp;&nbsp;
+<a href="{% url 'scoursecontent' %}">View Course Content</a>  &nbsp;&nbsp;&nbsp;
+<a href="{% url 'studentlogin' %}">Logout</a> &nbsp;&nbsp;&nbsp;
+    </div>
+<h3 align="right" style="color:green"><i>Welcome {{sid}}</i></h3>
+<br>
+{% block 'body' %}
+<center>
+<div class="card">
+
+  <div class="container">
+    <h4><b>{{student.studentid}}--{{student.fullname}}</b></h4>
+          <p><b>{{student.department}}</b></p>
+          <p><b>{{student.year}}--{{student.semester}}</b></p>
+      <p><b>{{student.email}}</b></p>
+      <p><b>{{student.contact}}</b></p>
+
+  </div>
+</div>
+    </center>
+
+{% endblock %}
+
+
+</body>
+</html>

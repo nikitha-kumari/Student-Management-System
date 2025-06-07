@@ -1,0 +1,113 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+<div style="display: flex; justify-content: center; align-items: center;  flex-direction: column;">
+<h2 align="center" style="color:red">{{msg}}</h2>
+<h3 align="center"><u>Add Course</u></h3>
+<form METHOD="post" action="{% url 'insertcourse' %}">
+  {% csrf_token %}
+  <table align="center" width="40%" height="50%">
+    <tr align="center">
+      <td ><label>Department</label></td>&nbsp
+      <td>
+        <select name="dept" required>
+          <option value="">--Select--</option>
+          <option value="CSE(Honors)">CSE(H)</option>
+          <option value="CSE(Regular)">CSE(R)</option>
+          <option value="CS&IT">CSIT</option>
+         </select>
+       </td>
+    </tr>
+
+    <tr align="center">
+      <td ><label> Program</label></td>
+      <td>
+        <select name="program" required>
+          <option value="">--Select--</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="M.Tech">M.Tech</option>
+
+         </select>
+       </td>
+    </tr>
+
+    <tr align="center">
+      <td ><label> Academic Year</label></td>
+      <td>
+        <select name="academic_year" required>
+          <option value="">--Select--</option>
+          <option value="2023-24">2023-24</option>
+          <option value="2024-25">2024-25</option>
+
+         </select>
+       </td>
+    </tr>
+
+    <tr align="center">
+      <td ><label> Semester</label></td>
+      <td>
+        <select name="semester" required>
+          <option value="">--Select--</option>
+          <option value="ODD">ODD SEM</option>
+          <option value="EVEN">EVEN SEM</option>
+
+         </select>
+       </td>
+    </tr>
+
+    <tr align="center">
+      <td ><label>Year</label></td>&nbsp;
+      <td>
+        <input type="number" name="year" min="1" max="4" required>
+
+         </select>
+       </td>
+    </tr>
+
+    <tr align="center">
+      <td ><label>Course Code</label></td>&nbsp;
+      <td>
+        <input type="text" name="coursecode" size="15%"  required>
+
+         </select>
+       </td>
+    </tr>
+
+    <tr align="center">
+      <td ><label>Course Title</label></td>&nbsp;
+      <td>
+        <input type="text" name="coursetitle"  size="15%" required>
+
+         </select>
+       </td>
+    </tr>
+
+      <tr align="center">
+      <td ><label>LTPSK</label>&nbsp;
+      <td>
+        <input type="text" name="LTPSK" required placeholder="X-X-X-X" size="15%">
+
+         </select>
+       </td>
+    </tr>
+
+      <tr align="center">
+      <td ><label>Credits</label></td>&nbsp;
+      <td>
+        <input type="text" name="coursecredits" min="0" max="8" size="15%"required>
+
+         </select>
+       </td>
+    </tr>
+
+
+    <tr align="center">
+      <td><input type="submit" value="Add" class="addbutton"></td>
+      <td><input type="reset" value="Clear" class="addbutton"></td>
+
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}

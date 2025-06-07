@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{% block 'body' %}
+<h2 align="center" style="color:red">{{messege}}</h2>
+
+<h3 align="center">Admin Login</h3>
+<center>
+
+<FORM method="post" action="{% url 'checkadminlogin' %}">
+    {% csrf_token %}
+    <TABLE align="center" width="30%" height="30%">
+        <tr>
+            <td>
+                <label>Enter Username</label>
+            </td>
+             <td>
+                <input type="text" name="uname" required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <label>Enter Password</label>
+            </td>
+             <td>
+                <input type="password" name="pwd" required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+        </tr>
+
+
+        <tr align="center">
+            <td>
+                <button class="button">Login</button>
+            </td>
+             <td>
+                <button class="button">Reset</button>
+            </td>
+        </tr>
+    </TABLE>
+</FORM>
+
+</center>
+
+{% endblock %}

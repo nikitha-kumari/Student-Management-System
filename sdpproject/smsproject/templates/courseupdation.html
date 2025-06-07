@@ -1,0 +1,53 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+<div style="display: flex; justify-content: center; align-items: center;  flex-direction: column;">
+
+<h3 align="center"><u>Update Course</u></h3>
+<h2 align="center" style="color:red">{{msg}}</h2>
+<form METHOD="post" action="{% url 'courseupdated' %}">
+  {% csrf_token %}
+  <table align="center" width="40%" height="50%">
+      <tr align="center" bgcolor="grey">
+          <td><label>Course Id</label></td>
+          <td><input type="number" name="cid" value="{{cid}}" readonly></td>
+      </tr>
+
+    <tr align="center">
+      <td ><label>Course Title</label></td>&nbsp;
+      <td>
+        <input type="text" name="coursetitle"  size="15%" required>
+
+         </select>
+       </td>
+    </tr>
+
+      <tr align="center">
+      <td ><label>LTPSK</label>&nbsp;
+      <td>
+        <input type="text" name="LTPSK" required placeholder="X-X-X-X" size="15%">
+
+         </select>
+       </td>
+    </tr>
+
+      <tr align="center">
+      <td ><label>Credits</label></td>&nbsp;
+      <td>
+        <input type="text" name="coursecredits" min="0" max="8" size="15%"required>
+
+         </select>
+       </td>
+    </tr>
+
+
+    <tr align="center">
+      <td><input type="submit" value="Update" class="addbutton"></td>
+      <td><input type="reset" value="Clear" class="addbutton"></td>
+
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<h2 align="center"> Student Academic Management System Project</h2>
+
+<nav class="navbar">
+    <div class="logo">MUO</div>
+
+    <ul class="nav-links">
+
+        <div class="menu">
+
+
+<li> <a href="{% url 'home' %}">Home</a></li>
+<li> <a href="{% url 'about' %}">About Project</a></li>
+<li class="services">
+    <a href="#">Login</a> &nbsp;&nbsp;
+
+            <ul class="dropdown">
+            <li><a href="{% url 'studentlogin' %}">Student </a></li>
+            <li><a href="{% url 'facultylogin' %}">Faculty</a></li>
+            <li><a href="{% url 'login' %}">Admin</a></li>
+
+          </ul>
+</li>
+
+<li> <a href="{% url 'contact' %}">Contact Us</a></li>  &nbsp;&nbsp;&nbsp;
+    </div>
+</ul>
+</nav>
+
+
+    <br><br>
+<h3 align="right" style="color:green"><i>Welcome {{messege}}</i></h3>
+
+{% block 'body' %}
+
+<img src="{% static 'images/Ancient History of Tirupati from Varaha Purana.jpg'%}" width="50%" height="75%">
+
+{% endblock %}
+
+
+
+
+</body>
+</html>
